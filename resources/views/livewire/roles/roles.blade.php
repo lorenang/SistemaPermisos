@@ -54,8 +54,8 @@
     </div>
 
     <div class="col-12 border mt-2">
-        @livewire('roles.asignacion-role-permisos')
-        @livewire('roles.asignacion-role-user')
+        {{-- @livewire('roles.asignacion-role-permisos')
+        @livewire('roles.asignacion-role-user') --}}
     </div>
 
 </div>

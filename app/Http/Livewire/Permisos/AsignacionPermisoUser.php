@@ -10,6 +10,9 @@ use App\Models\User;
 
 class AsignacionPermisoUser extends Component
 {
+    public $searchresultadopermiso;
+    public $searchresultadouser;
+
     public $searchpermiso;
     public $permiso;
     
@@ -29,6 +32,19 @@ class AsignacionPermisoUser extends Component
             $users->whereRaw('LOWER(apellido) like ?', ['%' . strtolower($this->searchuser) . '%']);
         }
         $users = $users->get();
+
+        if ($this->permiso !== null) {
+            $searchpermisoModel = $permissions->firstWhere('id', $this->permiso);
+            if ($searchpermisoModel) {
+                $this->searchresultadopermiso = $searchpermisoModel->name;
+            }
+        }
+        if ($this->user !== null) {
+            $searchDatosUser = $users->firstWhere('codigoe', $this->user);
+            if ($searchDatosUser) {
+                $this->searchresultadouser = $searchDatosUser->apellido;
+            }
+        }
         return view('livewire.permisos.asignacion-permiso-user', [
             'permissions' => $permissions,
             'users' => $users,
