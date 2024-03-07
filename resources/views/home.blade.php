@@ -11,6 +11,10 @@
             @livewire('roles.roles')
         @endif
 
+        @if(request()->routeIs('users'))
+            @livewire('users.users')
+        @endif
+
         @if(request()->routeIs('home'))
             <div class="col-md-8">
                 <div class="card">

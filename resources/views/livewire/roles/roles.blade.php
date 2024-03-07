@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-8">
         @if ($roles->count())
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>
                         <th>Detalle</th>
-                        <th></th>
+                        <th>Permisos</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -14,7 +14,11 @@
                     <tr>
                         <td>{{$role->name}}</td>
                         <td>{{$role->detail}}</td>
-                        <td></td>
+                        <td>
+                            @foreach ($role->permissions as $permiso)
+                                {{$permiso->name}} -
+                            @endforeach
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -54,8 +58,11 @@
     </div>
 
     <div class="col-12 border mt-2">
-        {{-- @livewire('roles.asignacion-role-permisos')
-        @livewire('roles.asignacion-role-user') --}}
+        @livewire('roles.asignacion-role-permisos')
+    </div>
+
+    <div class="col-12 border mt-2">
+        @livewire('roles.asignacion-role-user') 
     </div>
 
 </div>

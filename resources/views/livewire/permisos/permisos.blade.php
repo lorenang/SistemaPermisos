@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-8">
         @if ($permissions->count())
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>

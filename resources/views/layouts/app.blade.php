@@ -85,6 +85,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/roles' ) }}">Roles</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/users' ) }}">Usuarios</a>
+                </li>
             </div>
             @endauth
             

@@ -29,4 +29,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/permisos', [HomeController::class, 'index'])->name('permisos');
     Route::get('/roles', [HomeController::class, 'index'])->name('roles');
+    Route::get('/users', [HomeController::class, 'index'])->name('users');
 });
